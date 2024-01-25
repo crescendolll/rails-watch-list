@@ -8,8 +8,10 @@
         <p class="mb-3"><%= image_tag(m.poster_url, height: "400px", loading: "lazy") %></p>
         <p class="mb-3"><%= m.overview %></p>
         <p class="mb-3"><%= m.rating %></p>
+        <%= link_to "Delete", list_bookmark_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
       </div>
     <% end %>
   </div>
+  <%= link_to "Add movie", new_list_bookmark_path(@list) %>
   <%= link_to "Back to list index", lists_path %>
 </div>
